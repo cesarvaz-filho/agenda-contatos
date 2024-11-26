@@ -52,3 +52,28 @@ def list_contacts():
                 print(f"ID: {row[0]}, Nome: {row[1]}, Telefone: {row[2]}, Email: {row[3]}")
     except FileNotFoundError:
         print("Nenhum contato encontrado. O arquivo ainda não foi criado.")
+
+def update_contact():
+    print("\n--- Atualizar Contato ---")
+    id_to_update = input("Digite o ID do contato que deseja atualizar: ")
+    updated = False
+
+    with open(FILE_NAME, mode="r") as file:
+        rows = list(csv.reader(file))
+
+    for row in rows:
+        if row[0] == id_to_update:
+            print(f"Contato Atual: Nome: {row[1]}, Telefone: {row[2]}, Email: {row[3]}")
+            row[1] = input("Novo Nome: ") or row[1]
+            row[2] = input("Novo Telefone: ") or row[2]
+            row[3] = input("Novo Email: ") or row[3]
+            updated = True
+            break
+
+    if updated:
+        with open(FILE_NAME, mode="w", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerows(rows)
+        print("Contato atualizado com sucesso!")
+    else:
+        print("Contato não encontrado.")
