@@ -20,6 +20,7 @@ def main_menu():
         choice = input("Escolha uma opção: ")
 
         if choice == "1":
+            create_contact()
         elif choice == "2":
         elif choice == "3":
         elif choice == "4":
@@ -28,3 +29,15 @@ def main_menu():
             break
         else:
             print("Opção inválida. Tente novamente.")
+
+def create_contact():
+    print("\n--- Criar Novo Contato ---")
+    name = input("Nome: ")
+    phone = input("Telefone: ")
+    email = input("Email: ")
+
+    with open(FILE_NAME, mode="a", newline="") as file:
+        writer = csv.writer(file)
+        id = sum(1 for _ in open(FILE_NAME)) 
+        writer.writerow([id, name, phone, email])
+    print("Contato adicionado com sucesso!")
