@@ -22,8 +22,11 @@ def main_menu():
         if choice == "1":
             create_contact()
         elif choice == "2":
+            list_contacts()
         elif choice == "3":
+            update_contact()
         elif choice == "4":
+            delete_contact()
         elif choice == "5":
             print("Saindo da Agenda. Até mais!")
             break
