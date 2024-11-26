@@ -77,3 +77,24 @@ def update_contact():
         print("Contato atualizado com sucesso!")
     else:
         print("Contato não encontrado.")
+
+def delete_contact():
+    print("\n--- Deletar Contato ---")
+    id_to_delete = input("Digite o ID do contato que deseja deletar: ")
+    deleted = False
+
+    with open(FILE_NAME, mode="r") as file:
+        rows = list(csv.reader(file))
+
+    new_rows = [row for row in rows if row[0] != id_to_delete]
+
+    if len(new_rows) < len(rows):
+        deleted = True
+
+    if deleted:
+        with open(FILE_NAME, mode="w", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerows(new_rows)
+        print("Contato deletado com sucesso!")
+    else:
+        print("Contato não encontrado.")
