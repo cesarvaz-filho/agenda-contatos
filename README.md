@@ -35,6 +35,7 @@ Este é um projeto de linha de comando (CLI) desenvolvido em Python para gerenci
      ```bash
      python3 main.py
      ```
+   - Caso esteja usando o VSCode pode clicar no botão 'Run' no canto superior direito.
 
 4. **Interaja com o menu**:
    - O programa exibirá um menu com as opções:
@@ -54,8 +55,8 @@ Este é um projeto de linha de comando (CLI) desenvolvido em Python para gerenci
 
 ```plaintext
 agenda-contato/
-├── main.py       # Código principal do projeto
-├── contacts.csv    # Arquivo gerado automaticamente para salvar os dados (não incluso inicialmente)
+├── main.py         # Código principal do projeto
+├── contacts.csv    # Arquivo gerado para salvar os dados
 └── README.md       # Instruções e detalhes do projeto
 ```
 
@@ -64,8 +65,3 @@ agenda-contato/
 - O arquivo `contacts.csv` será criado automaticamente na primeira execução, caso ainda não exista.
 - Certifique-se de não excluir ou modificar manualmente o arquivo `contacts.csv` para evitar problemas com o programa.
 
-## Melhorias Futuras
-
-- Adicionar validações mais robustas para os dados inseridos (ex.: formato de email, telefone).
-- Implementar buscas nos contatos.
-- Adicionar suporte para exportação de dados em outros formatos, como JSON ou Excel.
