@@ -41,3 +41,14 @@ def create_contact():
         id = sum(1 for _ in open(FILE_NAME)) 
         writer.writerow([id, name, phone, email])
     print("Contato adicionado com sucesso!")
+
+def list_contacts():
+    print("\n--- Lista de Contatos ---")
+    try:
+        with open(FILE_NAME, mode="r") as file:
+            reader = csv.reader(file)
+            next(reader) 
+            for row in reader:
+                print(f"ID: {row[0]}, Nome: {row[1]}, Telefone: {row[2]}, Email: {row[3]}")
+    except FileNotFoundError:
+        print("Nenhum contato encontrado. O arquivo ainda não foi criado.")
