@@ -111,7 +111,7 @@ def search_contacts():
     found = False
 
     try:
-        with open(FILE_NAME, mode=r) as file:
+        with open(FILE_NAME, mode="r") as file:
             reader = csv.reader(file)
             next(reader)
             print("\nResultados da busca: ")
