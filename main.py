@@ -103,7 +103,9 @@ def delete_contact():
         print("Contato não encontrado.")
 
 def search_contacts():
-    pass
+    print("\n--- Buscar Contato ---")
+    keyword = input("Digite o termo de busca (Nome, Telefone ou Email): ").lower()
+    found = False
 
 if __name__ == "__main__":
     initialize_csv()
