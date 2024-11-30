@@ -9,6 +9,8 @@ Este é um projeto de linha de comando (CLI) desenvolvido em Python para gerenci
 2. **Listar Contatos**: Exibir todos os contatos cadastrados.
 3. **Atualizar Contato**: Editar as informações de um contato existente.
 4. **Deletar Contato**: Remover um contato da agenda.
+5. **Buscar Contato**: Pesquisa um contato da agenda.
+
 
 ## Requisitos
 
