@@ -16,7 +16,8 @@ def main_menu():
         print("2. Listar Contatos")
         print("3. Atualizar Contato")
         print("4. Deletar Contato")
-        print("5. Sair")
+        print("5. Buscar Contato")  # Nova opção
+        print("6. Sair")
         choice = input("Escolha uma opção: ")
 
         if choice == "1":
@@ -27,7 +28,9 @@ def main_menu():
             update_contact()
         elif choice == "4":
             delete_contact()
-        elif choice == "5":
+        elif choice == "5":  # Nova funcionalidade
+            search_contacts()
+        elif choice == "6":
             print("Saindo da Agenda. Até mais!")
             break
         else:
@@ -106,6 +109,20 @@ def search_contacts():
     print("\n--- Buscar Contato ---")
     keyword = input("Digite o termo de busca (Nome, Telefone ou Email): ").lower()
     found = False
+
+    try:
+        with open(FILE_NAME, mode=r) as file:
+            reader = csv.reader(file)
+            next(reader)
+            print("\nResultados da busca: ")
+            for row in reader:
+                if keyword in row[1].lower() or keyword in row[2].lower() or keyword in row[3].lower():
+                    print(f"ID: {row[0]}, Nome: {row[1]}, Telefone: {row[2]}, Email: {row[3]}")
+                    found = True
+        if not found:
+            print("Nenhum contato encontrado com o termo informado.")
+    except FileNotFoundError:
+        print("Nenhum contato encontrado.")
 
 if __name__ == "__main__":
     initialize_csv()
