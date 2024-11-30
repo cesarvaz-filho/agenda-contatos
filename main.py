@@ -102,6 +102,9 @@ def delete_contact():
     else:
         print("Contato não encontrado.")
 
+def search_contacts():
+    pass
+
 if __name__ == "__main__":
     initialize_csv()
     main_menu()
