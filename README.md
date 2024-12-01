@@ -47,7 +47,8 @@ Este é um projeto de linha de comando (CLI) desenvolvido em Python para gerenci
      2. Listar Contatos
      3. Atualizar Contato
      4. Deletar Contato
-     5. Sair
+     5. Buscar contato
+     6. Sair
      ```
 
 5. **Saída do arquivo**:
